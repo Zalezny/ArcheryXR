@@ -9,6 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ArcheryScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 17748b876af2b724e854356ffd6511f3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: e816d2e19ec001645baac0f65a427dad, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: be3cba6a7992d564e99f2bb2e72f05a7, type: 2}
