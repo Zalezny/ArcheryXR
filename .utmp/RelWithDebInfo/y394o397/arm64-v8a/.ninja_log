@@ -1,0 +1,12 @@
+# ninja log v5
+128	424	7540974677649972	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	b8727341f4325f87
+426	956	7540974682160516	C:/Users/danie/Documents/Projekty/ArcheryXR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/y394o397/obj/arm64-v8a/libswappywrapper.so	b3049923df674063
+64	1872	7540974691426435	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	8964b4a40f02a12
+50	1889	7540974691692794	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	b20ec97058c68e08
+96	2287	7540974695520392	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c4a3d51aa7dd0188
+1	2340	7540974696562664	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c814bd9775047949
+39	2376	7540974696769755	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	aef94d70e786468c
+110	2555	7540974699062393	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	a8449e795146d266
+78	2796	7540974701274440	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c973608ed8f91eec
+21	2987	7540974703267700	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	c291c0572f6a2db7
+2987	3186	7540974705315338	C:/Users/danie/Documents/Projekty/ArcheryXR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/y394o397/obj/arm64-v8a/libgame.so	28bcb02094b3f276
