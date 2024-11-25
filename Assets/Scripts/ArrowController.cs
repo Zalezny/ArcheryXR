@@ -6,7 +6,7 @@ public class ArrowController : MonoBehaviour
     private GameObject midPointVisual, arrowPrefab, arrowSpawnPoint;
 
     [SerializeField]
-    private float arrowMaxSpeed = 10;
+    private float arrowMaxSpeed = 0.2f;
 
     public void PrepareArrow()
     {
