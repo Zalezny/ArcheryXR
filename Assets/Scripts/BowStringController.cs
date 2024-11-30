@@ -3,7 +3,7 @@ using Oculus.Interaction;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BowController : MonoBehaviour
+public class BowStringController : MonoBehaviour
 {
     [SerializeField]
     private BowString bowStringRenderer;
