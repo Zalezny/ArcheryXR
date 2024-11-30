@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TargetSpawner : MonoBehaviour
 {
-    public float spawnTimer = 1;
+    public float spawnTimer = 10;
     public GameObject prefabTarget;
 
     public float minEdgeDistance = 0.3f;
@@ -63,7 +63,7 @@ public class TargetSpawner : MonoBehaviour
                     randomPositionNormalOffset.y = UnityEngine.Random.Range(minimumPositionY, smallestWallPosition?.y ?? 1);
                 }
                 GameObject targetObject = Instantiate(prefabTarget, randomPositionNormalOffset, Quaternion.identity);
-                targetObject.GetComponent<TargetController>().StartMoving();
+                targetObject.GetComponent<TargetController>().StartMoving(norm);
                 return;
             }
             else
