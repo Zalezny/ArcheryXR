@@ -1,5 +1,4 @@
-using System.Threading.Tasks;
-using Oculus.Interaction;
+using Oculus.Interaction.Grab;
 using UnityEngine;
 
 public class TargetCollision : MonoBehaviour
@@ -20,25 +19,29 @@ public class TargetCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameObject generatedHole = Instantiate(blackHole);
-        generatedHole.transform.position = transform.position;
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        //Vector3 collisionNormal = other.ClosestPointOnBounds(transform.position) - transform.position;
-        Vector3 collisionNormal = transform.position - startPos;
-
-        collisionNormal.Normalize();
-        generatedHole.transform.rotation = Quaternion.Euler(collisionNormal.z * 90, 0, collisionNormal.x * 90);
-        visualTarget.GetComponent<MeshRenderer>().enabled = true;
-
-
-        wallCollisionCount++;
-        if (wallCollisionCount > 1)
+        if(other.gameObject.name == "WALL_FACE_EffectMesh")
         {
-            //isMoving = false; // Zatrzymaj ruch po osi¹gniêciu celu
-            Destroy(gameObject);
+            GameObject generatedHole = Instantiate(blackHole);
+            generatedHole.transform.position = transform.position;
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            //Vector3 collisionNormal = other.ClosestPointOnBounds(transform.position) - transform.position;
+            Vector3 collisionNormal = transform.position - startPos;
+
+            collisionNormal.Normalize();
+            generatedHole.transform.rotation = Quaternion.Euler(collisionNormal.z * 90, 0, collisionNormal.x * 90);
+            visualTarget.GetComponent<MeshRenderer>().enabled = true;
 
 
+            wallCollisionCount++;
+            if (wallCollisionCount > 1)
+            {
+                //isMoving = false; // Zatrzymaj ruch po osi¹gniêciu celu
+                Destroy(gameObject);
+
+                
+            }
         }
+       
 
 
     }
