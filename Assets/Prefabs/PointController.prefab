@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8410202710459149581}
   - component: {fileID: 4673322384949419155}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PointController
-  m_TagString: Untagged
+  m_TagString: PointController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

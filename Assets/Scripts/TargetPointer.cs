@@ -1,9 +1,12 @@
 using System.Collections;
+using NUnit.Framework;
 using UnityEngine;
 
 public class TargetPointer : MonoBehaviour
 {
     public GameObject parentObject;
+
+    public string pointControllerTag = "PointController";
 
     private int collectedPoints = 0;
     public void PointAssigner(int points)
@@ -11,7 +14,9 @@ public class TargetPointer : MonoBehaviour
         if(points > collectedPoints) { 
             collectedPoints = points;
             StartCoroutine(ExecuteAfterTime(1f));
-            // TODO: to pointcontroller
+            GameObject pointController = GameObject.FindGameObjectWithTag(pointControllerTag);
+            if (pointController == null) { Assert.Fail("Point Controller nie istnieje"); }
+            pointController.GetComponent<PointController>().addPoints(points);
             StartCoroutine(ExecuteAfterTime(3f));
             Destroy(parentObject);
 

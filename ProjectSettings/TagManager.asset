@@ -7,6 +7,9 @@ TagManager:
   - Arrow
   - Target
   - EffectMesh
+  - PassThroughButton
+  - PassThrough
+  - PointController
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - Arrow
   - Player
   - Target
-  - 
+  - PointController
   - 
   - 
   - 
