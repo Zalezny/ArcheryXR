@@ -16,6 +16,11 @@ public class TargetCollision : MonoBehaviour
         this.startPos = startPos;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Test");
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
