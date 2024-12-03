@@ -24,7 +24,7 @@ public class StickingArrow : MonoBehaviour
             arrow.transform.parent = other.attachedRigidbody.transform;
         }
 
-        other.GetComponent<TargetController>()?.GetHit();
+        //other.GetComponent<TargetController>()?.GetHit();
 
         Destroy(gameObject);
     }

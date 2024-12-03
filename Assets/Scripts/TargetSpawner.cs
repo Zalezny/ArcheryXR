@@ -16,6 +16,8 @@ public class TargetSpawner : MonoBehaviour
 
     public int spawnTry = 1000;
 
+    public float speed = 1f;
+
     private float timer;
 
     private Vector3? smallestWallPosition;
@@ -63,7 +65,9 @@ public class TargetSpawner : MonoBehaviour
                     randomPositionNormalOffset.y = UnityEngine.Random.Range(minimumPositionY, smallestWallPosition?.y ?? 1);
                 }
                 GameObject targetObject = Instantiate(prefabTarget, randomPositionNormalOffset, Quaternion.identity);
-                targetObject.GetComponent<TargetController>().StartMoving(norm);
+                var targetController = targetObject.GetComponent<TargetController>();
+                targetController.speed = speed;
+                targetController.StartMoving(norm);
                 return;
             }
             else

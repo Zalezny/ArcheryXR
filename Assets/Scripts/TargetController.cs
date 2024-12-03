@@ -9,6 +9,7 @@ public class TargetController : MonoBehaviour
     public float speed = 1f;
     private Vector3 direction;
     private float moveTimer;
+    public HapticFeedback hapticFeedback;
     public void StartMoving(Vector3 normal)
     {
         GetComponent<TargetCollision>().InitialPosition(transform.position);
@@ -68,5 +69,6 @@ public class TargetController : MonoBehaviour
     {
         rb.isKinematic = false;
         isMoving = false;
+        hapticFeedback.TriggerVibration(0.5f);
     }
 }

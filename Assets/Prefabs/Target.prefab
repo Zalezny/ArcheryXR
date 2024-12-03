@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1660894850710536149}
   - component: {fileID: 6155082257502284006}
   - component: {fileID: 4498813189123743826}
+  - component: {fileID: 1270424201680170973}
   m_Layer: 8
   m_Name: 50
   m_TagString: Target
@@ -109,6 +110,68 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1270424201680170973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2504543062514954429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dffa343618220749ac6bd5a1d04be30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToCollect: 50
+  colliderTag: Arrow
+  targetRb: {fileID: 6707650162204051860}
+  targetController: {fileID: 3217432149775066883}
+  pointer: {fileID: 2343490679894996524}
+--- !u!1 &4410844412690293336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 523499888070275213}
+  - component: {fileID: 2343490679894996524}
+  m_Layer: 0
+  m_Name: Pointer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &523499888070275213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410844412690293336}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5719810325829419811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2343490679894996524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410844412690293336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65494fb6482f08f4eaa709f34d5bb6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentObject: {fileID: 8578445772589598423}
 --- !u!1 &6035897959182424814
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +184,7 @@ GameObject:
   - component: {fileID: 5003490330027298843}
   - component: {fileID: 8234871643814703709}
   - component: {fileID: 6523273942567142983}
+  - component: {fileID: 1785474126548313775}
   m_Layer: 8
   m_Name: 75
   m_TagString: Target
@@ -218,6 +282,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1785474126548313775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6035897959182424814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dffa343618220749ac6bd5a1d04be30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToCollect: 75
+  colliderTag: Arrow
+  targetRb: {fileID: 6707650162204051860}
+  targetController: {fileID: 3217432149775066883}
+  pointer: {fileID: 2343490679894996524}
 --- !u!1 &7950698767208590666
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +311,7 @@ GameObject:
   - component: {fileID: 773495555969916668}
   - component: {fileID: 8017167323181027370}
   - component: {fileID: 701396261522915843}
+  - component: {fileID: 7845683349221429000}
   m_Layer: 8
   m_Name: 25
   m_TagString: Target
@@ -327,6 +409,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7845683349221429000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950698767208590666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dffa343618220749ac6bd5a1d04be30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToCollect: 25
+  colliderTag: Arrow
+  targetRb: {fileID: 6707650162204051860}
+  targetController: {fileID: 3217432149775066883}
+  pointer: {fileID: 2343490679894996524}
 --- !u!1 &8578445772589598423
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +439,7 @@ GameObject:
   - component: {fileID: 6707650162204051860}
   - component: {fileID: 842923622481220343}
   - component: {fileID: 6371188916286290551}
+  - component: {fileID: 973524053239221670}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -365,6 +465,7 @@ Transform:
   - {fileID: 8273623333261073832}
   - {fileID: 3542286581291669536}
   - {fileID: 6697823612659010517}
+  - {fileID: 523499888070275213}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3217432149775066883
@@ -382,6 +483,7 @@ MonoBehaviour:
   moveDuration: 10
   playerTag: Player
   speed: 1
+  hapticFeedback: {fileID: 973524053239221670}
 --- !u!54 &6707650162204051860
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -445,6 +547,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8308308536106381945, guid: f1f72e197f7d35c4d84056373587a078, type: 3}
+--- !u!114 &973524053239221670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578445772589598423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f937ea5388a8d47940a9988f5f6bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8840594091897487967
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +571,7 @@ GameObject:
   - component: {fileID: 1223177946631640294}
   - component: {fileID: 853157713754286497}
   - component: {fileID: 963628096311427990}
+  - component: {fileID: 9015345690764605155}
   m_Layer: 8
   m_Name: 100
   m_TagString: Target
@@ -554,6 +669,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &9015345690764605155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8840594091897487967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dffa343618220749ac6bd5a1d04be30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToCollect: 100
+  colliderTag: Arrow
+  targetRb: {fileID: 6707650162204051860}
+  targetController: {fileID: 3217432149775066883}
+  pointer: {fileID: 2343490679894996524}
 --- !u!1001 &8940126728049568729
 PrefabInstance:
   m_ObjectHideFlags: 0
