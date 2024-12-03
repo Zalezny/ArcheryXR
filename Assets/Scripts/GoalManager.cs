@@ -18,4 +18,10 @@ public class GoalManager : MonoBehaviour
         menuUI.SetActive(false);
         game.SetActive(true);
     }
+
+
+    public void onEnd()
+    {
+        Application.Quit();
+    }
 }
