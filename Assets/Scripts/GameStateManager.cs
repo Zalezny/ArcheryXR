@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
+using System.Threading.Tasks;
+using System.Timers;
 using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
@@ -34,11 +36,6 @@ public class GameStateManager : MonoBehaviour
         currentLevelIndex = 0;
         currentPointerController = null;
         currentTargetSpawner = null;
-
-        if (levels.Count <= 0)
-        {
-            Assert.Fail("Zdefiniuj levele gry");
-        }
     }
 
     public void StartGame()
@@ -46,7 +43,7 @@ public class GameStateManager : MonoBehaviour
         startUI.SetActive(false);
         game.SetActive(true);
         endUI.SetActive(false);
-        StartCoroutine(PlayLevel());
+        PlayLevel();
     }
 
     public void ShowMenu()
@@ -60,7 +57,7 @@ public class GameStateManager : MonoBehaviour
 
     public void ShowEnd()
     {
-        endUI.GetComponent<EndTextReader>().achievedScore = currentPointerController.GetComponent<PointController>().GetAchievedPoints();
+        endUI.GetComponentInChildren<EndTextReader>().GetComponent<EndTextReader>().achievedScore = currentPointerController.GetComponent<PointController>().GetAchievedPoints();
         startUI.SetActive(false);
         game.SetActive(false);
         endUI.SetActive(true);
@@ -73,13 +70,12 @@ public class GameStateManager : MonoBehaviour
 
     void EndGameSession()
     {
-        
-        StopCoroutine(PlayLevel());
         ShowEnd();
         Destroy(currentPointerController);
         Destroy(currentTargetSpawner);
         currentPointerController = null;
         currentPointerController = null;
+
     }
 
     void HandleGenerateLevel(LevelModel level)
@@ -90,11 +86,17 @@ public class GameStateManager : MonoBehaviour
         TargetSpawner targetScript = currentTargetSpawner.GetComponent<TargetSpawner>();
         targetScript.spawnTimer = level.nextTargetDuration;
         targetScript.speed = level.targetSpeed;
+        targetScript.targetsCount = level.targetCount;
     }
 
     bool HasEnoughPoints(LevelModel level)
     {
-        int achievedPoints = currentPointerController.GetComponent<PointController>().GetAchievedPoints();
+        int achievedPoints = 0;
+        if (currentPointerController.TryGetComponent<PointController>(out PointController component))
+        {
+            achievedPoints = component.GetAchievedPoints();
+        }
+
 
         if (achievedPoints >= level.minimumPoints)
         {
@@ -105,21 +107,25 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    IEnumerator PlayLevel()
+    void PlayLevel()
     {
         LevelModel level = levels[currentLevelIndex];
         HandleGenerateLevel(level);
 
-        // Czekaj 10 sekund
-        yield return new WaitForSeconds(10f);
+    }
+
+    public void CheckResultOfLevel()
+    {
+        var level = levels[currentLevelIndex];
 
         //Obsluz koniec danego level'a
-        if (HasEnoughPoints(level)) {
+        if (HasEnoughPoints(level))
+        {
             // PrzejdŸ do nastêpnego poziomu
             currentLevelIndex++;
             if (currentLevelIndex < levels.Count)
             {
-                StartCoroutine(PlayLevel()); // Rozpocznij nowy poziom
+                PlayLevel(); // Rozpocznij nowy poziom
             }
             else
             {
@@ -127,13 +133,12 @@ public class GameStateManager : MonoBehaviour
                 Debug.Log("Wszystkie poziomy zosta³y ukoñczone!");
                 // Mo¿esz tutaj dodaæ logikê koñca gry lub restartu
             }
-        } else
+        }
+        else
         {
             EndGameSession();
 
         }
-
-       
     }
 
 
@@ -142,16 +147,13 @@ public class GameStateManager : MonoBehaviour
 public class LevelModel
 {
     public string levelName; // Nazwa poziomu
-    public int time;
     public int targetCount;
     public int nextTargetDuration;
     public int targetSpeed;
     public int minimumPoints;
     public LevelModel(string name, int time, int targetCount, int nextTargetDuration, int targetSpeed, int minimumPoints)
     {
-        this.time = time;
         this.levelName = name;
-        this.time = time;
         this.targetCount = targetCount;
         this.nextTargetDuration = nextTargetDuration;
         this.targetSpeed = targetSpeed;

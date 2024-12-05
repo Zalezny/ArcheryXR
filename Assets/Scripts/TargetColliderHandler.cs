@@ -9,8 +9,6 @@ public class TargetColliderHandler : MonoBehaviour
 
     public Rigidbody targetRb;
 
-    public TargetController targetController;
-
     public TargetPointer pointer;
 
     private void OnCollisionEnter(Collision collision)
@@ -18,7 +16,6 @@ public class TargetColliderHandler : MonoBehaviour
 
         if(collision.collider.CompareTag(colliderTag) && targetRb.isKinematic) 
         {
-            targetController.GetHit();
             pointer.PointAssigner(pointsToCollect);
         }
     }

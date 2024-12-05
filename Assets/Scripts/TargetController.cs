@@ -1,12 +1,16 @@
+using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TargetController : MonoBehaviour
 {
     public float moveDuration = 10f;
     private bool isMoving;
     public string playerTag = "Player";
+    public string gameControllerTag = "GameController";
     private Rigidbody rb;
     public float speed = 1f;
+    public bool isLastTarget = false;
     private Vector3 direction;
     private float moveTimer;
     public HapticFeedback hapticFeedback;
@@ -34,9 +38,20 @@ public class TargetController : MonoBehaviour
             }
             else
             {
+             
+                    if(isLastTarget)
+                    {
+                    OnLastTarget();
+                    }
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void OnLastTarget()
+    {
+        var gameController = GameObject.FindGameObjectWithTag(gameControllerTag);
+        gameController.GetComponent<GameStateManager>().CheckResultOfLevel();
     }
     private void MoveInDirection()
     {
@@ -51,6 +66,7 @@ public class TargetController : MonoBehaviour
 
     void RotateObjectToPlayer()
     {
+        
         Transform player = GameObject.FindGameObjectWithTag(playerTag).transform;
         // Oblicz kierunek do gracza
         Vector3 directionToPlayer = player.position - transform.position;
@@ -65,9 +81,8 @@ public class TargetController : MonoBehaviour
         transform.rotation = targetRotation;
     }
 
-    public void GetHit()
+    public void DisableMovingAndHapticFeedback()
     {
-        rb.isKinematic = false;
         isMoving = false;
         hapticFeedback.TriggerVibration(0.5f);
     }

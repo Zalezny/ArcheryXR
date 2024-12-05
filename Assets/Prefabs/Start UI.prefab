@@ -651,7 +651,6 @@ GameObject:
   m_Component:
   - component: {fileID: 899243183135894289}
   - component: {fileID: 5712704958308732809}
-  - component: {fileID: 2686744590034678373}
   m_Layer: 0
   m_Name: Start UI
   m_TagString: Untagged
@@ -690,7 +689,7 @@ MonoBehaviour:
   m_Target: {fileID: 0}
   m_TargetOffset: {x: 0, y: 0, z: 0.5}
   m_FollowInLocalSpace: 0
-  m_ApplyTargetInLocalSpace: 0
+  m_ApplyTargetInLocalSpace: 1
   m_MovementSpeed: 2
   m_MovementSpeedVariancePercentage: 0.188
   m_SnapOnEnable: 1
@@ -701,33 +700,6 @@ MonoBehaviour:
   m_RotationFollowMode: 1
   m_MinAngleAllowed: 0.1
   m_MaxAngleAllowed: 2
-  m_TimeUntilThresholdReachesMaxAngle: 3
---- !u!114 &2686744590034678373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8953821642614731833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a2d7d89889b4d94fa1f8d6fe49788e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
-  m_TargetOffset: {x: 0, y: 0, z: 0.5}
-  m_FollowInLocalSpace: 0
-  m_ApplyTargetInLocalSpace: 0
-  m_MovementSpeed: 6
-  m_MovementSpeedVariancePercentage: 0.25
-  m_SnapOnEnable: 1
-  m_PositionFollowMode: 1
-  m_MinDistanceAllowed: 0.01
-  m_MaxDistanceAllowed: 0.3
-  m_TimeUntilThresholdReachesMaxDistance: 3
-  m_RotationFollowMode: 1
-  m_MinAngleAllowed: 0.1
-  m_MaxAngleAllowed: 5
   m_TimeUntilThresholdReachesMaxAngle: 3
 --- !u!1001 &255872261120016893
 PrefabInstance:
@@ -780,6 +752,14 @@ PrefabInstance:
     - target: {fileID: 5101466559130651239, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
       propertyPath: m_Name
       value: End Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527096895486647535, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527096895486647535, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameStateManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -873,11 +853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5527096895486647535, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: onStart
+      value: StartGame
       objectReference: {fileID: 0}
     - target: {fileID: 5527096895486647535, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GoalManager, Assembly-CSharp
+      value: GameStateManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5527096895486647535, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName

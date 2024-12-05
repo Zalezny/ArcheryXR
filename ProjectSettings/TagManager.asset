@@ -10,6 +10,7 @@ TagManager:
   - PassThroughButton
   - PassThrough
   - PointController
+  - Bow
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Player
   - Target
   - PointController
-  - 
+  - GameController
   - 
   - 
   - 

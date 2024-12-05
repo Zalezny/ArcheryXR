@@ -18,7 +18,12 @@ public class TargetSpawner : MonoBehaviour
 
     public float speed = 1f;
 
+    public int targetsCount = 1;
+
+    private int spawnedTargets = 0;
+
     private float timer;
+
 
     private Vector3? smallestWallPosition;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -56,9 +61,16 @@ public class TargetSpawner : MonoBehaviour
         int currentTry = 0;
 
         while (currentTry < spawnTry) {
+            if (spawnedTargets >= targetsCount)
+            {
+                return;
+            }
+
             bool hasPosition = room.GenerateRandomPositionOnSurface(MRUK.SurfaceType.VERTICAL, minEdgeDistance, LabelFilter.Included(spawnLabels), out Vector3 pos, out Vector3 norm);
+
             if (hasPosition)
             {
+                bool isLastTarget = spawnedTargets >= targetsCount-1;
                 Vector3 randomPositionNormalOffset = pos + norm * normalOffset;
                 if (randomPositionNormalOffset.y < minimumPositionY)
                 {
@@ -67,7 +79,9 @@ public class TargetSpawner : MonoBehaviour
                 GameObject targetObject = Instantiate(prefabTarget, randomPositionNormalOffset, Quaternion.identity);
                 var targetController = targetObject.GetComponent<TargetController>();
                 targetController.speed = speed;
+                targetController.isLastTarget = isLastTarget;
                 targetController.StartMoving(norm);
+                spawnedTargets++;
                 return;
             }
             else

@@ -11,9 +11,21 @@ public class TargetCollision : MonoBehaviour
 
     public GameObject visualTarget;
 
+    public Rigidbody rb;
+
+    public TargetController controller;
+
     public void InitialPosition(Vector3 startPos)
     {
         this.startPos = startPos;
+    }
+
+    public void GetHit()
+    {
+        UnityEngine.Debug.Log(" GetHit");
+
+        rb.isKinematic = false;
+        controller.DisableMovingAndHapticFeedback();
     }
 
     private void OnTriggerEnter(Collider other)

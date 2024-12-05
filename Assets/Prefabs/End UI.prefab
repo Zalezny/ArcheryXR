@@ -406,14 +406,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5698385957361916000}
   - component: {fileID: 1091117476364259671}
-  - component: {fileID: 4091901618215892790}
   m_Layer: 0
   m_Name: End UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5698385957361916000
 Transform:
   m_ObjectHideFlags: 0
@@ -457,33 +456,6 @@ MonoBehaviour:
   m_RotationFollowMode: 1
   m_MinAngleAllowed: 0.1
   m_MaxAngleAllowed: 2
-  m_TimeUntilThresholdReachesMaxAngle: 3
---- !u!114 &4091901618215892790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5251000359601184078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a2d7d89889b4d94fa1f8d6fe49788e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
-  m_TargetOffset: {x: 0, y: 0, z: 0.5}
-  m_FollowInLocalSpace: 0
-  m_ApplyTargetInLocalSpace: 0
-  m_MovementSpeed: 6
-  m_MovementSpeedVariancePercentage: 0.25
-  m_SnapOnEnable: 1
-  m_PositionFollowMode: 1
-  m_MinDistanceAllowed: 0.01
-  m_MaxDistanceAllowed: 0.3
-  m_TimeUntilThresholdReachesMaxDistance: 3
-  m_RotationFollowMode: 1
-  m_MinAngleAllowed: 0.1
-  m_MaxAngleAllowed: 5
   m_TimeUntilThresholdReachesMaxAngle: 3
 --- !u!1 &5280614835984811614
 GameObject:
@@ -644,6 +616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8041358325851639994}
+  - component: {fileID: 194233932047585001}
   m_Layer: 0
   m_Name: EndTextReader
   m_TagString: Untagged
@@ -666,6 +639,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5698385957361916000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &194233932047585001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8201436693813164214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36233391e6b150344b645860e8ba1d4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bestScoreKey: BestScore
+  bestScoreText: {fileID: 0}
+  currentScoreText: {fileID: 0}
+  achievedScore: 0
 --- !u!1 &8377470047288967107
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,7 +911,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2966102474171394786, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
       propertyPath: m_text
-      value: Start
+      value: Go to menu
       objectReference: {fileID: 0}
     - target: {fileID: 5101466559130651238, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
       propertyPath: m_LocalScale.x
@@ -978,7 +967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5101466559130651239, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
       propertyPath: m_Name
-      value: Start Game Button
+      value: Go To Menu
       objectReference: {fileID: 0}
     - target: {fileID: 5527096895486647535, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.size
@@ -994,11 +983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5527096895486647535, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: onStart
+      value: ShowMenu
       objectReference: {fileID: 0}
     - target: {fileID: 5527096895486647535, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GoalManager, Assembly-CSharp
+      value: GameStateManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5527096895486647535, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1064,7 +1053,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5101466559130651239, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
       propertyPath: m_Name
-      value: End Button
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527096895486647535, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527096895486647535, guid: 48feb04da4ab9e64a9b5aee64175fde1, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameStateManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
