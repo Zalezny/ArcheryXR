@@ -6,7 +6,7 @@ public class TargetController : MonoBehaviour
 {
     public float moveDuration = 10f;
     private bool isMoving;
-    public string playerTag = "Player";
+    public string mainCameraTag = "MainCamera";
     public string gameControllerTag = "GameController";
     private Rigidbody rb;
     public float speed = 1f;
@@ -67,7 +67,7 @@ public class TargetController : MonoBehaviour
     void RotateObjectToPlayer()
     {
         
-        Transform player = GameObject.FindGameObjectWithTag(playerTag).transform;
+        Transform player = GameObject.FindGameObjectWithTag(mainCameraTag).transform;
         // Oblicz kierunek do gracza
         Vector3 directionToPlayer = player.position - transform.position;
 

@@ -9,6 +9,12 @@ public class TargetPointer : MonoBehaviour
 
     public TargetCollision targetCollision;
 
+    public string colliderTag = "Arrow";
+
+    public Rigidbody parentRb;
+
+    public Transform centerPoint;
+
     private int collectedPoints = 0;
     public void PointAssigner(int points)
     {
@@ -31,5 +37,33 @@ public class TargetPointer : MonoBehaviour
     {
         yield return new WaitForSeconds(time); // Wstrzymaj wykonanie na okreœlony czas
         Debug.Log("Wykonano po " + time + " sekundach"); // Kod do wykonania po up³ywie czasu
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        int pointsToCollect = 0;
+        var colliderPosition = collision.collider.gameObject.transform.position;
+        var distanceToCenter = Vector3.Distance(colliderPosition, centerPoint.position);
+
+        if (distanceToCenter <= 0.04)
+        {
+            pointsToCollect = 100;
+        }else if( distanceToCenter <= 0.14)
+        {
+            pointsToCollect = 75;
+        } else if( distanceToCenter <= 0.24)
+        {
+            pointsToCollect = 50;
+        }
+        else
+        {
+            pointsToCollect = 25;
+        }
+
+
+        if (collision.collider.CompareTag(colliderTag))
+        {
+           PointAssigner(pointsToCollect);
+        }
     }
 }

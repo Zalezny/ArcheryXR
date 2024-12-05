@@ -22,7 +22,7 @@ public class TargetCollision : MonoBehaviour
 
     public void GetHit()
     {
-        UnityEngine.Debug.Log(" GetHit");
+        Debug.Log(" GetHit");
 
         rb.isKinematic = false;
         controller.DisableMovingAndHapticFeedback();
