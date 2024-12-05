@@ -61,7 +61,7 @@ public class TargetPointer : MonoBehaviour
         }
 
 
-        if (collision.collider.CompareTag(colliderTag))
+        if (collision.gameObject. CompareTag(colliderTag) || collision.collider.CompareTag(colliderTag))
         {
            PointAssigner(pointsToCollect);
         }

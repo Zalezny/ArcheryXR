@@ -14,6 +14,7 @@ public class TargetCollision : MonoBehaviour
     public Rigidbody rb;
 
     public TargetController controller;
+    public bool isLastTarget;
 
     public void InitialPosition(Vector3 startPos)
     {
@@ -35,7 +36,6 @@ public class TargetCollision : MonoBehaviour
             GameObject generatedHole = Instantiate(blackHole);
             generatedHole.transform.position = transform.position;
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            //Vector3 collisionNormal = other.ClosestPointOnBounds(transform.position) - transform.position;
             Vector3 collisionNormal = transform.position - startPos;
 
             collisionNormal.Normalize();
@@ -46,7 +46,10 @@ public class TargetCollision : MonoBehaviour
             wallCollisionCount++;
             if (wallCollisionCount > 1)
             {
-                //isMoving = false; // Zatrzymaj ruch po osi¹gniêciu celu
+                if (isLastTarget)
+                {
+                    controller.OnLastTarget();
+                }
                 Destroy(gameObject);
 
                 

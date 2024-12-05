@@ -9,13 +9,13 @@ public class EndTextReader : MonoBehaviour
     public GameObject bestScoreGameObject;
     public GameObject currentScoreGameObject;
 
-    private TextMeshPro bestScoreText;
-    private TextMeshPro currentScoreText;
+    private TextMeshProUGUI bestScoreText;
+    private TextMeshProUGUI currentScoreText;
     public int achievedScore = 0;
     void Start()
     {
-        bestScoreText = bestScoreGameObject.GetComponent<TextMeshPro>();
-        currentScoreText = currentScoreGameObject.GetComponent<TextMeshPro>();
+        bestScoreText = bestScoreGameObject.GetComponent<TextMeshProUGUI>();
+        currentScoreText = currentScoreGameObject.GetComponent<TextMeshProUGUI>();
         if (PlayerPrefs.HasKey(bestScoreKey))
         {
             int score = PlayerPrefs.GetInt(bestScoreKey);
@@ -26,16 +26,9 @@ public class EndTextReader : MonoBehaviour
         {
             bestScoreText.enabled = false;
         }
-        
+        currentScoreText.enabled = true;
+        currentScoreText.text = currentScoreText.text + " " + achievedScore;
     }
 
-    private void Update()
-    {
 
-        if (achievedScore > 0)
-        {
-            currentScoreText.enabled = true;
-            currentScoreText.text = currentScoreText.text + " " + achievedScore;
-        }
-    }
 }

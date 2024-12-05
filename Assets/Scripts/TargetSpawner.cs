@@ -56,21 +56,25 @@ public class TargetSpawner : MonoBehaviour
 
     public void SpawnTarget(MRUKRoom room)
     {
-        
+        if (spawnedTargets >= targetsCount)
+        {
+            return;
+        }
 
         int currentTry = 0;
 
         while (currentTry < spawnTry) {
-            if (spawnedTargets >= targetsCount)
-            {
-                return;
-            }
+            
 
             bool hasPosition = room.GenerateRandomPositionOnSurface(MRUK.SurfaceType.VERTICAL, minEdgeDistance, LabelFilter.Included(spawnLabels), out Vector3 pos, out Vector3 norm);
 
             if (hasPosition)
             {
-                bool isLastTarget = spawnedTargets >= targetsCount-1;
+                bool isLastTarget = false;
+                if(spawnedTargets >= (targetsCount - 1))
+                {
+                    isLastTarget = true;
+                }
                 Vector3 randomPositionNormalOffset = pos + norm * normalOffset;
                 if (randomPositionNormalOffset.y < minimumPositionY)
                 {

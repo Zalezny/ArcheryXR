@@ -16,7 +16,9 @@ public class TargetController : MonoBehaviour
     public HapticFeedback hapticFeedback;
     public void StartMoving(Vector3 normal)
     {
-        GetComponent<TargetCollision>().InitialPosition(transform.position);
+        var targetCollision = GetComponent<TargetCollision>();
+        targetCollision.InitialPosition(transform.position);
+        targetCollision.isLastTarget = isLastTarget;
         isMoving = true;
         direction = normal.normalized;
     }
@@ -38,18 +40,15 @@ public class TargetController : MonoBehaviour
             }
             else
             {
-             
-                    if(isLastTarget)
-                    {
-                    OnLastTarget();
-                    }
                 Destroy(gameObject);
             }
         }
     }
 
-    private void OnLastTarget()
+    public void OnLastTarget()
     {
+        UnityEngine.Debug.Log("Test OnLastTarget");
+
         var gameController = GameObject.FindGameObjectWithTag(gameControllerTag);
         gameController.GetComponent<GameStateManager>().CheckResultOfLevel();
     }

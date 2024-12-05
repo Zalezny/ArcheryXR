@@ -36,6 +36,8 @@ public class GameStateManager : MonoBehaviour
         currentLevelIndex = 0;
         currentPointerController = null;
         currentTargetSpawner = null;
+        PlayLevel();
+
     }
 
     public void StartGame()
@@ -116,6 +118,8 @@ public class GameStateManager : MonoBehaviour
 
     public void CheckResultOfLevel()
     {
+        UnityEngine.Debug.Log("Test CheckResultOfLevel");
+
         var level = levels[currentLevelIndex];
 
         //Obsluz koniec danego level'a
@@ -123,7 +127,7 @@ public class GameStateManager : MonoBehaviour
         {
             // PrzejdŸ do nastêpnego poziomu
             currentLevelIndex++;
-            if (currentLevelIndex < levels.Count)
+            if (currentLevelIndex < levels.Count-1)
             {
                 PlayLevel(); // Rozpocznij nowy poziom
             }
