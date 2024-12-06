@@ -246,9 +246,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8362636956233555048}
     m_Modifications:
+    - target: {fileID: 1918996417309383662, guid: b85bf3a75b2b2ec4b93155027497cdd6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2410271734309294575, guid: b85bf3a75b2b2ec4b93155027497cdd6, type: 3}
       propertyPath: m_Name
       value: Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638678694783495515, guid: b85bf3a75b2b2ec4b93155027497cdd6, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3042412393605614421, guid: b85bf3a75b2b2ec4b93155027497cdd6, type: 3}
       propertyPath: m_LocalPosition.x
