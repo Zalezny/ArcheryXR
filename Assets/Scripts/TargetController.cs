@@ -23,6 +23,11 @@ public class TargetController : MonoBehaviour
         direction = normal.normalized;
     }
 
+    public void GetHit()
+    {
+        rb.isKinematic = false;
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();

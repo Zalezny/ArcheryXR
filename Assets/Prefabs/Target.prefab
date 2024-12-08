@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 6733697641744198495}
   m_Layer: 0
   m_Name: Pointer
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 3127071893947398593}
   m_Layer: 0
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -591,6 +591,7 @@ MonoBehaviour:
   blackHole: {fileID: 3467490967604256987, guid: 2eb3b2eb6d45426498c5a0f46a18695d, type: 3}
   visualTarget: {fileID: 8129239450083628680}
   rb: {fileID: 6707650162204051860}
+  parentCollider: {fileID: 0}
   controller: {fileID: 3217432149775066883}
   isLastTarget: 0
 --- !u!64 &6371188916286290551

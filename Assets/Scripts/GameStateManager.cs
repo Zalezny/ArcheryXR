@@ -36,8 +36,6 @@ public class GameStateManager : MonoBehaviour
         currentLevelIndex = 0;
         currentPointerController = null;
         currentTargetSpawner = null;
-        PlayLevel();
-
     }
 
     public void StartGame()

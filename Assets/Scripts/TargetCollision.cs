@@ -12,6 +12,7 @@ public class TargetCollision : MonoBehaviour
     public GameObject visualTarget;
 
     public Rigidbody rb;
+    public MeshCollider parentCollider;
 
     public TargetController controller;
     public bool isLastTarget;
@@ -24,13 +25,16 @@ public class TargetCollision : MonoBehaviour
     public void GetHit()
     {
         Debug.Log(" GetHit");
-
+        //parentCollider.isTrigger = false;
+        //parentCollider.convex = false;
         rb.isKinematic = false;
+        
         controller.DisableMovingAndHapticFeedback();
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Test Trigger " + other.gameObject.name);
         if(other.gameObject.name == "WALL_FACE_EffectMesh")
         {
             GameObject generatedHole = Instantiate(blackHole);

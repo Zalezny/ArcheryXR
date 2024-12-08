@@ -2162,8 +2162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnOnStart: 1
-  MeshMaterial: {fileID: 2100000, guid: c065636df773f7f478b11aec27b3981c, type: 2}
-  BorderSize: 1.9
+  MeshMaterial: {fileID: 2100000, guid: f57589e71fd54394d9a4c9049a7f7964, type: 2}
+  BorderSize: 2
   Colliders: 1
   CutHoles: 0
   castShadows: 1
@@ -26355,6 +26355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start UI
       objectReference: {fileID: 0}
+    - target: {fileID: 8953821642614731833, guid: 75b92444df97d364ebbbf750825bb99b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26381,6 +26385,26 @@ PrefabInstance:
     - target: {fileID: 5251000359601184078, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
       propertyPath: m_Name
       value: End UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251000359601184078, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415402019327173284, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415402019327173284, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415402019327173284, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415402019327173284, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -220
       objectReference: {fileID: 0}
     - target: {fileID: 5698385957361916000, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26422,14 +26446,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6791115416372993505, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+      propertyPath: m_text
+      value: '<align="center">Achieved:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791115416372993505, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+      propertyPath: m_margin.x
+      value: -57.275833
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791115416372993505, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+      propertyPath: m_margin.z
+      value: 2.9230804
+      objectReference: {fileID: 0}
     - target: {fileID: 7729278458298899446, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1575747429}
+    - target: {fileID: 8497343072600967882, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+      propertyPath: m_text
+      value: '<align="center">Best score:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497343072600967882, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+      propertyPath: m_margin.x
+      value: -57.582863
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8287406359538278388, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2645872313345294770, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
 --- !u!1 &8953821642047902489 stripped
 GameObject:

@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Timers;
 using UnityEngine;
 
 public class TargetPointer : MonoBehaviour
@@ -14,36 +16,47 @@ public class TargetPointer : MonoBehaviour
     public Rigidbody parentRb;
 
     public Transform centerPoint;
+    private Timer _timer;
 
     private int collectedPoints = 0;
     public void PointAssigner(int points)
     {
-        if(points > collectedPoints) { 
+        if(points > collectedPoints) {
             targetCollision.GetHit();
 
             collectedPoints = points;
-            StartCoroutine(ExecuteAfterTime(1f));
             GameObject pointController = GameObject.FindGameObjectWithTag(pointControllerTag);
+
             pointController.GetComponent<PointController>().addPoints(points);
-            StartCoroutine(ExecuteAfterTime(3f));
-            Destroy(parentObject);
+            ExecuteAfterTime(3000, () => Destroy(parentObject));
+
+
 
         }
     }
 
 
 
-    private IEnumerator ExecuteAfterTime(float time)
+    private void ExecuteAfterTime(int milliseconds, Action action)
     {
-        yield return new WaitForSeconds(time); // Wstrzymaj wykonanie na okreœlony czas
-        Debug.Log("Wykonano po " + time + " sekundach"); // Kod do wykonania po up³ywie czasu
+        _timer = new Timer(milliseconds);
+        _timer.Elapsed += (sender, e) =>
+        {
+            _timer.Stop(); // Zatrzymaj Timer po wykonaniu akcji
+            _timer.Dispose();
+            action?.Invoke();
+            Debug.Log("Test Timer invoke");
+        };
+        _timer.AutoReset = false; // Zapewnia, ¿e Timer uruchomi siê tylko raz
+        _timer.Start();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void GetHit(Transform arrowHittedTransform)
     {
+        Debug.Log("Test GetHit");
         int pointsToCollect = 0;
-        var colliderPosition = collision.collider.gameObject.transform.position;
-        var distanceToCenter = Vector3.Distance(colliderPosition, centerPoint.position);
+
+        var distanceToCenter = Vector3.Distance(arrowHittedTransform.position, centerPoint.position);
 
         if (distanceToCenter <= 0.04)
         {
@@ -59,11 +72,9 @@ public class TargetPointer : MonoBehaviour
         {
             pointsToCollect = 25;
         }
+        PointAssigner(pointsToCollect);
 
 
-        if (collision.gameObject. CompareTag(colliderTag) || collision.collider.CompareTag(colliderTag))
-        {
-           PointAssigner(pointsToCollect);
-        }
+
     }
 }

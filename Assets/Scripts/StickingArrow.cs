@@ -41,9 +41,10 @@ public class StickingArrow : MonoBehaviour
         if(collision.collider.attachedRigidbody != null)
         {
             arrow.transform.parent = collision.collider.attachedRigidbody.transform;
+            Debug.Log("Test AttachedBody " + collision.collider.name);
+            collision.collider.GetComponent<TargetPointer>()?.GetHit(arrow.transform.parent);
 
         }
-        //collision.collider.GetComponent<TargetController>()?.GetHit();
 
         Destroy(gameObject);
     }
