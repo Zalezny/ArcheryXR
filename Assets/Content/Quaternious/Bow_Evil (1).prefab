@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 5284064647836002500}
   m_Layer: 3
   m_Name: HandGrab
-  m_TagString: Untagged
+  m_TagString: Bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -782,7 +782,7 @@ GameObject:
   - component: {fileID: 931624017724540846}
   m_Layer: 3
   m_Name: GrabInterctable
-  m_TagString: Untagged
+  m_TagString: Bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1400,8 +1400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c29eda8e403ec1439db14731ccb7eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endpoint1: {fileID: 2066866401692099236}
-  endpoint2: {fileID: 884484303053764702}
+  startAnchor: {fileID: 2066866401692099236}
+  endAnchor: {fileID: 884484303053764702}
 --- !u!1 &8607779684804112849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,12 +1766,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18eb797676765b043aa5c8c8cb3c3d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bowStringRenderer: {fileID: 1287716527343505586}
-  midPointGrabObject: {fileID: 1863862078086248230}
-  midPointVisualObject: {fileID: 4349752302071771622}
-  midPointParent: {fileID: 1071043252055932969}
-  bowStringStretchLimit: 0.35
-  onBowPulled:
+  stringRenderer: {fileID: 1287716527343505586}
+  grabHandle: {fileID: 1863862078086248230}
+  visualMidpoint: {fileID: 4349752302071771622}
+  midpointParent: {fileID: 1071043252055932969}
+  maxDrawDistance: 0.25
+  OnBowDrawStarted:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9084288923034459198}
@@ -1786,7 +1786,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onBowReleased:
+  OnBowReleased:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9084288923034459198}

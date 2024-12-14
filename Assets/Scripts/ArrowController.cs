@@ -13,7 +13,7 @@ public class ArrowController : MonoBehaviour
         midPointVisual.SetActive(true);
     }
 
-    public void ReleaseArrow(float strength)
+    private void ReleaseArrow(float strength)
     {
         midPointVisual.SetActive(false);
 
