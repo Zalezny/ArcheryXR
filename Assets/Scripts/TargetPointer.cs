@@ -27,8 +27,8 @@ public class TargetPointer : MonoBehaviour
             collectedPoints = points;
             GameObject pointController = GameObject.FindGameObjectWithTag(pointControllerTag);
 
-            pointController.GetComponent<PointController>().addPoints(points);
-            ExecuteAfterTime(3000, () => Destroy(parentObject));
+            pointController.GetComponent<PointController>().AddPointsPerRound(points);
+            //ExecuteAfterTime(3000, () => Destroy(parentObject));
 
 
 

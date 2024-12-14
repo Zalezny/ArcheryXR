@@ -18,13 +18,12 @@ public class GameStateManager : MonoBehaviour
     [SerializeField]
     public List<LevelModel> levels;
     [SerializeField]
-    public GameObject pointControllerPrefab;
+    public PointController pointController;
     [SerializeField]
     public GameObject targetSpawnerPrefab;
 
     private int currentLevelIndex = 0;
 
-    private GameObject currentPointerController;
     private GameObject currentTargetSpawner;
 
 
@@ -34,7 +33,7 @@ public class GameStateManager : MonoBehaviour
         endUI.SetActive(false);
         game.SetActive(false);
         currentLevelIndex = 0;
-        currentPointerController = null;
+        pointController.ClearPoints();
         currentTargetSpawner = null;
     }
 
@@ -51,13 +50,13 @@ public class GameStateManager : MonoBehaviour
         startUI.SetActive(true);
         game.SetActive(false);
         endUI.SetActive(false);
-        currentPointerController = null;
+        pointController.ClearPoints();
         currentLevelIndex = 0;
     }
 
     public void ShowEnd()
     {
-        endUI.GetComponentInChildren<EndTextReader>().GetComponent<EndTextReader>().achievedScore = currentPointerController.GetComponent<PointController>().GetAchievedPoints();
+        endUI.GetComponentInChildren<EndTextReader>().GetComponent<EndTextReader>().achievedScore = pointController.GetAchievedPoints();
         startUI.SetActive(false);
         game.SetActive(false);
         endUI.SetActive(true);
@@ -71,16 +70,13 @@ public class GameStateManager : MonoBehaviour
     void EndGameSession()
     {
         ShowEnd();
-        Destroy(currentPointerController);
         Destroy(currentTargetSpawner);
-        currentPointerController = null;
-        currentPointerController = null;
+        pointController.ClearPoints();
 
     }
 
     void HandleGenerateLevel(LevelModel level)
     {
-        currentPointerController = Instantiate(pointControllerPrefab);
         currentTargetSpawner = Instantiate(targetSpawnerPrefab);
 
         TargetSpawner targetScript = currentTargetSpawner.GetComponent<TargetSpawner>();
@@ -91,12 +87,7 @@ public class GameStateManager : MonoBehaviour
 
     bool HasEnoughPoints(LevelModel level)
     {
-        int achievedPoints = 0;
-        if (currentPointerController.TryGetComponent<PointController>(out PointController component))
-        {
-            achievedPoints = component.GetAchievedPoints();
-        }
-
+        int achievedPoints = pointController.GetPointsPerRound();
 
         if (achievedPoints >= level.minimumPoints)
         {
@@ -123,6 +114,8 @@ public class GameStateManager : MonoBehaviour
         //Obsluz koniec danego level'a
         if (HasEnoughPoints(level))
         {
+            pointController.AddPoints(pointController.GetPointsPerRound());
+            pointController.ClearPointsPerRound();
             // PrzejdŸ do nastêpnego poziomu
             currentLevelIndex++;
             if (currentLevelIndex < levels.Count-1)
@@ -132,13 +125,16 @@ public class GameStateManager : MonoBehaviour
             else
             {
                 EndGameSession();
-                Debug.Log("Wszystkie poziomy zosta³y ukoñczone!");
+                Debug.Log("Test Wszystkie poziomy zosta³y ukoñczone!");
                 // Mo¿esz tutaj dodaæ logikê koñca gry lub restartu
             }
         }
         else
         {
+            pointController.ClearPointsPerRound();
             EndGameSession();
+            Debug.Log("Test Ukoñczenie z powodu braku wystarczaj¹cej liczby punktów");
+
 
         }
     }
@@ -151,9 +147,9 @@ public class LevelModel
     public string levelName; // Nazwa poziomu
     public int targetCount;
     public int nextTargetDuration;
-    public int targetSpeed;
+    public float targetSpeed;
     public int minimumPoints;
-    public LevelModel(string name, int time, int targetCount, int nextTargetDuration, int targetSpeed, int minimumPoints)
+    public LevelModel(string name, int time, int targetCount, int nextTargetDuration, float targetSpeed, int minimumPoints)
     {
         this.levelName = name;
         this.targetCount = targetCount;

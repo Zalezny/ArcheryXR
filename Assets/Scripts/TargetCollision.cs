@@ -50,13 +50,7 @@ public class TargetCollision : MonoBehaviour
             wallCollisionCount++;
             if (wallCollisionCount > 1)
             {
-                if (isLastTarget)
-                {
-                    controller.OnLastTarget();
-                }
-                Destroy(gameObject);
-
-                
+                controller.RemoveTarget();
             }
         }
        

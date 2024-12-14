@@ -45,12 +45,22 @@ public class TargetController : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                RemoveTarget();
+                UnityEngine.Debug.Log("Usuniêto tarcze " + isLastTarget);
             }
         }
     }
 
-    public void OnLastTarget()
+    public void RemoveTarget()
+    {
+        if (isLastTarget)
+        {
+            OnLastTarget();
+        }
+        Destroy(gameObject);
+    }
+
+    private void OnLastTarget()
     {
         UnityEngine.Debug.Log("Test OnLastTarget");
 
