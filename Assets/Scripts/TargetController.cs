@@ -12,7 +12,7 @@ public class TargetController : MonoBehaviour
     public float speed = 1f;
     public bool isLastTarget = false;
     private Vector3 direction;
-    private float moveTimer;
+    private float moveTimer = 0f;
     public HapticFeedback hapticFeedback;
     public void StartMoving(Vector3 normal)
     {
@@ -31,23 +31,25 @@ public class TargetController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        moveTimer = moveDuration;
+        moveTimer = 0f;
     }
 
     void Update()
     {
-        if (isMoving)
+        UnityEngine.Debug.Log("Czas tarczy " + moveTimer + " " + isLastTarget);
+        if (moveTimer > moveDuration )
         {
-            if (moveTimer > 0)
+            RemoveTarget();
+            UnityEngine.Debug.Log("Usuniêto tarcze " + isLastTarget);
+        }
+        else
+        {
+            if(isMoving)
             {
                 MoveInDirection();
-                moveTimer -= Time.deltaTime; // Zmniejsz timer
             }
-            else
-            {
-                RemoveTarget();
-                UnityEngine.Debug.Log("Usuniêto tarcze " + isLastTarget);
-            }
+            moveTimer += Time.deltaTime;
+                
         }
     }
 
