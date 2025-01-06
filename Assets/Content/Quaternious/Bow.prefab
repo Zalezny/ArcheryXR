@@ -1589,7 +1589,7 @@ GameObject:
   - component: {fileID: 6212622682049566853}
   - component: {fileID: 9084288923034459198}
   m_Layer: 3
-  m_Name: Bow_Evil (1)
+  m_Name: Bow
   m_TagString: Bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

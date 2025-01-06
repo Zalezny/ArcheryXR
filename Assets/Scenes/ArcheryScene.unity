@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 31023374}
   - component: {fileID: 31023372}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Controller Tracking Right'
+  m_Name: Controller Tracking Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -603,7 +603,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1673595413}
     m_Modifications:
     - target: {fileID: 6411341229736521268, guid: f66da6b7c330f4143a2f8b64c9627820, type: 3}
       propertyPath: m_Name
@@ -627,15 +627,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8410202710459149581, guid: f66da6b7c330f4143a2f8b64c9627820, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8410202710459149581, guid: f66da6b7c330f4143a2f8b64c9627820, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8410202710459149581, guid: f66da6b7c330f4143a2f8b64c9627820, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8410202710459149581, guid: f66da6b7c330f4143a2f8b64c9627820, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -950,6 +950,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65178995}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &65284394 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8410202710459149581, guid: f66da6b7c330f4143a2f8b64c9627820, type: 3}
+  m_PrefabInstance: {fileID: 40919614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &69663119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,7 +1999,7 @@ GameObject:
   - component: {fileID: 190720485}
   - component: {fileID: 190720484}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Effect Mesh'
+  m_Name: Effect Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2703,6 +2708,39 @@ Transform:
   - {fileID: 31023373}
   m_Father: {fileID: 1557562537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &244438159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244438160}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &244438160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244438159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1751325312}
+  - {fileID: 8953821642047902491}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &248495791
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,7 +3005,7 @@ GameObject:
   - component: {fileID: 265170130}
   - component: {fileID: 265170129}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Hand Interactions'
+  m_Name: Hand Interactions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4022,7 +4060,7 @@ GameObject:
   - component: {fileID: 359784531}
   - component: {fileID: 359784532}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Camera Rig'
+  m_Name: Camera Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5401,7 +5439,7 @@ GameObject:
   - component: {fileID: 445441069}
   - component: {fileID: 445441068}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Passthrough'
+  m_Name: Passthrough
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8751,7 +8789,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1673595413}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &705507996
 MonoBehaviour:
@@ -9278,7 +9316,7 @@ GameObject:
   - component: {fileID: 757115381}
   - component: {fileID: 757115383}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Left Poke'
+  m_Name: Left Poke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9971,7 +10009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986255506551857916, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
       propertyPath: m_Name
-      value: Bow_Evil (1)
+      value: Bow
       objectReference: {fileID: 0}
     - target: {fileID: 9084288923034459198, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
       propertyPath: spawnPoint
@@ -11369,7 +11407,7 @@ GameObject:
   - component: {fileID: 929127673}
   - component: {fileID: 929127672}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Hand Tracking left'
+  m_Name: Hand Tracking left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12269,7 +12307,7 @@ GameObject:
   - component: {fileID: 978385035}
   - component: {fileID: 978385033}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Controller Tracking Left'
+  m_Name: Controller Tracking Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15904,7 +15942,7 @@ GameObject:
   - component: {fileID: 1350304449}
   - component: {fileID: 1350304450}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Controller Interactions'
+  m_Name: Controller Interactions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16584,7 +16622,7 @@ GameObject:
   - component: {fileID: 1426280781}
   - component: {fileID: 1426280780}
   m_Layer: 0
-  m_Name: '[BuildingBlock] MR Utility Kit'
+  m_Name: MR Utility Kit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17475,7 +17513,7 @@ GameObject:
   - component: {fileID: 1506923364}
   - component: {fileID: 1506923363}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Interaction'
+  m_Name: Interaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18479,12 +18517,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575747428}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.40318307, y: 1.1061656, z: -0.1767824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1673595413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1581261629
 GameObject:
@@ -19498,8 +19536,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 65284394}
   - {fileID: 882964576}
   - {fileID: 223974227}
+  - {fileID: 1575747430}
+  - {fileID: 705507995}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1677158893
@@ -19551,7 +19592,7 @@ GameObject:
   - component: {fileID: 1681824911}
   - component: {fileID: 1681824910}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Hand Tracking right'
+  m_Name: Hand Tracking right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20242,7 +20283,7 @@ GameObject:
   - component: {fileID: 1720716335}
   - component: {fileID: 1720716334}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Synthetic Left Hand'
+  m_Name: Synthetic Left Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20981,6 +21022,11 @@ Animator:
 --- !u!1 &1751325310 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8953821642614731833, guid: 75b92444df97d364ebbbf750825bb99b, type: 3}
+  m_PrefabInstance: {fileID: 4611000199190747728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1751325312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 899243183135894289, guid: 75b92444df97d364ebbbf750825bb99b, type: 3}
   m_PrefabInstance: {fileID: 4611000199190747728}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1752168333
@@ -22472,7 +22518,7 @@ GameObject:
   - component: {fileID: 1873852163}
   - component: {fileID: 1873852162}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Synthetic Right Hand'
+  m_Name: Synthetic Right Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26100,7 +26146,7 @@ GameObject:
   - component: {fileID: 2143524493}
   - component: {fileID: 2143524495}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Right Poke'
+  m_Name: Right Poke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26197,7 +26243,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 244438160}
     m_Modifications:
     - target: {fileID: 482652794650897254, guid: 75b92444df97d364ebbbf750825bb99b, type: 3}
       propertyPath: m_AnchorMax.y
@@ -26233,15 +26279,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 899243183135894289, guid: 75b92444df97d364ebbbf750825bb99b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 899243183135894289, guid: 75b92444df97d364ebbbf750825bb99b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 899243183135894289, guid: 75b92444df97d364ebbbf750825bb99b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 899243183135894289, guid: 75b92444df97d364ebbbf750825bb99b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -26288,7 +26334,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 244438160}
     m_Modifications:
     - target: {fileID: 4393586046782621104, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -26336,15 +26382,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5698385957361916000, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5698385957361916000, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5698385957361916000, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5698385957361916000, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -26392,15 +26438,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5251000359601184078, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
   m_PrefabInstance: {fileID: 7599115375768905145}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &8953821642047902491 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5698385957361916000, guid: 6aa0ad5f4f41fea458700455edeaa4cb, type: 3}
+  m_PrefabInstance: {fileID: 7599115375768905145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 705507995}
   - {fileID: 1120825140}
   - {fileID: 1673595413}
-  - {fileID: 4611000199190747728}
-  - {fileID: 1575747430}
-  - {fileID: 7599115375768905145}
   - {fileID: 1828601337}
-  - {fileID: 40919614}
+  - {fileID: 244438160}
