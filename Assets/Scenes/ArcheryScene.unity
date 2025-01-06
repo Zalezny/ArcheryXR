@@ -9958,11 +9958,11 @@ PrefabInstance:
     - target: {fileID: 7313731630524774211, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: ff0e640aa6fc59948a44612920c71023, type: 3}
+      objectReference: {fileID: 8300000, guid: 59986f8cad902504f911429fc0ba1ef2, type: 3}
     - target: {fileID: 7313731630524774211, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ff0e640aa6fc59948a44612920c71023, type: 3}
+      objectReference: {fileID: 8300000, guid: 59986f8cad902504f911429fc0ba1ef2, type: 3}
     - target: {fileID: 7313731630524774211, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
