@@ -70,7 +70,11 @@ public class BowStringHandler : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        grabInteractable = grabHandle.GetComponent<Grabbable>();
+        if(grabHandle != null)
+            if(grabHandle.TryGetComponent<Grabbable>(out Grabbable grab))
+            {
+                grabInteractable = grab;
+            }
     }
 
     /// <summary>
@@ -78,7 +82,10 @@ public class BowStringHandler : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        grabInteractable.WhenPointerEventRaised += OnPointerEvent;
+        if (grabInteractable != null)
+        {
+            grabInteractable.WhenPointerEventRaised += OnPointerEvent;
+        }
     }
 
     /// <summary>
@@ -86,7 +93,10 @@ public class BowStringHandler : MonoBehaviour
     /// </summary>
     private void OnDestroy()
     {
-        grabInteractable.WhenPointerEventRaised -= OnPointerEvent;
+        if (grabInteractable != null)
+        {
+            grabInteractable.WhenPointerEventRaised -= OnPointerEvent;
+        }
     }
 
     /// <summary>
@@ -97,7 +107,7 @@ public class BowStringHandler : MonoBehaviour
     {
         if (pointerEvent.Type == PointerEventType.Select)
         {
-            StartDrawing(pointerEvent);
+            StartDrawing();
         }
         else if (pointerEvent.Type == PointerEventType.Unselect)
         {
@@ -108,10 +118,12 @@ public class BowStringHandler : MonoBehaviour
     /// <summary>
     /// Rozpoczyna proces naci¹gania ciêciwy.
     /// </summary>
-    /// <param name="pointerEvent">Dane dotycz¹ce zdarzenia wskaŸnika.</param>
-    private void StartDrawing(PointerEvent pointerEvent)
+    private void StartDrawing()
     {
-        currentInteractor = grabInteractable.transform;
+        if (grabInteractable != null)
+        {
+            currentInteractor = grabInteractable.transform;
+        }
         OnBowDrawStarted?.Invoke();
     }
 
