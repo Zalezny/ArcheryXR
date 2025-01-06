@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8449685161347972655}
-  myCollider: {fileID: 3345933192922717004}
+  arrowPickCollider: {fileID: 3345933192922717004}
   stickingArrow: {fileID: 5596757032631719633, guid: e147143406aeca849a5e5ca2ea315d8f, type: 3}
 --- !u!1 &8402900055892031382
 GameObject:

@@ -9823,6 +9823,10 @@ PrefabInstance:
       propertyPath: startAnchor
       value: 
       objectReference: {fileID: 1147057798}
+    - target: {fileID: 3163992259004145916, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3646621465951178404, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
       propertyPath: m_TagString
       value: Bow
@@ -9954,11 +9958,11 @@ PrefabInstance:
     - target: {fileID: 7313731630524774211, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: d5652b3a58f1a0f469958dd9d55c317a, type: 3}
+      objectReference: {fileID: 8300000, guid: ff0e640aa6fc59948a44612920c71023, type: 3}
     - target: {fileID: 7313731630524774211, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: d5652b3a58f1a0f469958dd9d55c317a, type: 3}
+      objectReference: {fileID: 8300000, guid: ff0e640aa6fc59948a44612920c71023, type: 3}
     - target: {fileID: 7313731630524774211, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
@@ -10027,8 +10031,13 @@ PrefabInstance:
       propertyPath: maxProjectileSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 9084288923034459198, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
+      propertyPath: midStringVisualPoint
+      value: 
+      objectReference: {fileID: 1510289649}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6211169893665690546, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
@@ -17619,6 +17628,11 @@ Transform:
   - {fileID: 1173708832}
   m_Father: {fileID: 1938370656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1510289649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3163992259004145916, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}
+  m_PrefabInstance: {fileID: 782628375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1510289650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4349752302071771622, guid: 26dfe3176a7e9ac4296e41c568e53fa9, type: 3}

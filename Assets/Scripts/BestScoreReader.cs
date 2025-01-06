@@ -1,10 +1,22 @@
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Klasa odpowiedzialna za odczytywanie najlepszego wyniku z pamiêci gracza i wyœwietlanie go na obiekcie z komponentem TextMeshPro.
+/// </summary>
 public class BestScoreReader : MonoBehaviour
 {
-    public string key = "BestScore";
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    /// <summary>
+    /// Klucz u¿ywany do odczytywania najlepszego wyniku z PlayerPrefs.
+    /// Domyœlnie ustawiony na "BestScore".
+    /// </summary>
+    [SerializeField]
+    private string key = "BestScore";
+
+    /// <summary>
+    /// Metoda wywo³ywana na pocz¹tku, która sprawdza, czy istnieje zapisany najlepszy wynik.
+    /// Jeœli wynik istnieje, jest wyœwietlany na komponencie TextMeshPro.
+    /// </summary>
     void Start()
     {
         if(PlayerPrefs.HasKey(key))
@@ -15,11 +27,5 @@ public class BestScoreReader : MonoBehaviour
             textMeshPro.text = textMeshPro.text + " " + score;
 
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

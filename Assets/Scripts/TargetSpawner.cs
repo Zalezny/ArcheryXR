@@ -1,38 +1,76 @@
 using System.Collections.Generic;
 using Meta.XR.MRUtilityKit;
-using NUnit.Framework;
 using UnityEngine;
 
+/// <summary>
+/// Zarz¹dza generowaniem celów w wirtualnym œrodowisku MR (Mixed Reality),
+/// z uwzglêdnieniem losowych pozycji na œcianach w przestrzeni.
+/// </summary>
 public class TargetSpawner : MonoBehaviour
 {
+    /// <summary>
+    /// Interwa³ czasowy miêdzy generowaniem kolejnych celów (w sekundach).
+    /// </summary>
     public float spawnTimer = 10;
+
+    /// <summary>
+    /// Prefab obiektu celu, który ma zostaæ wygenerowany.
+    /// </summary>
     public GameObject prefabTarget;
 
+    /// <summary>
+    /// Minimalna odleg³oœæ celu od krawêdzi powierzchni.
+    /// </summary>
     public float minEdgeDistance = 0.3f;
+
+    /// <summary>
+    /// Etykiety sceny, które okreœlaj¹, gdzie cele mog¹ byæ generowane.
+    /// </summary>
     public MRUKAnchor.SceneLabels spawnLabels;
+
+    /// <summary>
+    /// Przesuniêcie celu wzd³u¿ normalnej powierzchni.
+    /// </summary>
     public float normalOffset;
 
+    /// <summary>
+    /// Minimalna wysokoœæ generowanego celu (oœ Y).
+    /// </summary>
     public float minimumPositionY = 0.5f;
 
+    /// <summary>
+    /// Maksymalna liczba prób generowania celu w losowym miejscu.
+    /// </summary>
     public int spawnTry = 1000;
 
+    /// <summary>
+    /// Prêdkoœæ poruszania siê celu.
+    /// </summary>
     public float speed = 1f;
 
+    /// <summary>
+    /// Prêdkoœæ poruszania siê celu.
+    /// </summary>
     public int targetsCount = 1;
 
+    /// <summary>
+    /// Licznik wygenerowanych celów.
+    /// </summary>
     private int spawnedTargets = 0;
 
+    /// <summary>
+    /// Licznik czasu u¿ywany do kontrolowania interwa³ów generowania celów.
+    /// </summary>
     private float timer;
 
-
+    /// <summary>
+    /// Pozycja najni¿szej œciany w pomieszczeniu.
+    /// </summary>
     private Vector3? smallestWallPosition;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Wywo³ywana w ka¿dej klatce, zarz¹dza logik¹ generowania celów w okreœlonych interwa³ach.
+    /// </summary>
     void Update()
     {
         if (!MRUK.Instance && !MRUK.Instance.IsInitialized)
@@ -54,6 +92,10 @@ public class TargetSpawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Generuje nowy cel w przestrzeni, jeœli docelowa liczba celów nie zosta³a osi¹gniêta.
+    /// </summary>
+    /// <param name="room">Obiekt pomieszczenia z informacjami o œcianach i powierzchniach.</param>
     public void SpawnTarget(MRUKRoom room)
     {
         if (spawnedTargets >= targetsCount)
@@ -97,7 +139,11 @@ public class TargetSpawner : MonoBehaviour
         
     }
 
-
+    /// <summary>
+    /// Oblicza pozycjê najni¿szej œciany w pomieszczeniu.
+    /// </summary>
+    /// <param name="room">Obiekt pomieszczenia z list¹ œcian.</param>
+    /// <returns>Pozycja najni¿szej œciany w przestrzeni.</returns>
     private Vector3 CalcSmallestWallTransform(MRUKRoom room)
     {
         List<MRUKAnchor> walls = room.WallAnchors;

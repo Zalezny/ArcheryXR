@@ -1,16 +1,25 @@
 using UnityEngine;
 
+/// <summary>
+/// Zarz¹dza wibracjami kontrolera w celu zapewnienia haptycznego sprzê¿enia zwrotnego.
+/// </summary>
 public class HapticFeedback : MonoBehaviour
 {
+    /// <summary>
+    /// Uruchamia wibracje na prawym kontrolerze przez okreœlony czas.
+    /// </summary>
+    /// <param name="time">Czas trwania wibracji w sekundach.</param>
     public void TriggerVibration(float time)
     {
-        // Ustawienie drgañ na maksymaln¹ czêstotliwoœæ i amplitudê
-        OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.RTouch); // Dla prawego kontrolera
-        Invoke(nameof(StopVibration), time); // Zatrzymaj drganie po 0.5 sekundy
+        OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.RTouch);
+        Invoke(nameof(StopVibration), time);
     }
 
+    /// <summary>
+    /// Zatrzymuje wibracje na prawym kontrolerze.
+    /// </summary>
     private void StopVibration()
     {
-        OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch); // Zatrzymaj drganie
+        OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
     }
 }
