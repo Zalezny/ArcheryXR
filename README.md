@@ -1,4 +1,4 @@
-# Archery XR - Zręcznościowej gra w technologii rozszerzonej rzeczywistości
+# Archery XR - Zręcznościowa gra w technologii rozszerzonej rzeczywistości
 
 Opracowanie projektu oraz implementacja gry zręcznościowej z wykorzystaniem technologii rozszerzonej rzeczywistości polegającej na strzelaniu z łuku do tarcz. Aplikacja ta nie tylko dostarcza użytkownikowi rozrywki, lecz także stanowi interaktywną platformę 
 umożliwiającą zapoznanie się z technologią, która integruje świat rzeczywisty z elementami wirtualnymi.
